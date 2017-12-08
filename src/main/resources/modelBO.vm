@@ -1,0 +1,20 @@
+package ${model.boPackageName};
+
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+#foreach($import in ${model.dataImport})
+import $import;
+#end
+
+@Getter
+@Setter
+public class ${model.modelBoName} implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+#foreach($fieldInfo in ${model.rowsData})
+    private ${fieldInfo.type} ${fieldInfo.name};
+
+#end
+}
