@@ -8,8 +8,6 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
-import com.code.generator.util.SpringContextUtil;
-
 /**
  * Created by WuTing on 2017/12/5.
  */

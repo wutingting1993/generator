@@ -58,6 +58,10 @@ public class SchemaAspect {
 			}
 		}
 
+		if (!dataSourceName.toLowerCase().contains("datasource")) {
+			dataSourceName += "DataSource";
+		}
+
 		return dataSourceName;
 	}
 }

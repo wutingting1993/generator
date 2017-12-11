@@ -27,7 +27,7 @@ import org.springframework.util.CollectionUtils;
 
 import com.code.generator.config.DataSource;
 import com.code.generator.config.Schema;
-import com.code.generator.util.SpringContextUtil;
+import com.code.generator.config.SpringContextUtil;
 import com.code.generator.util.PropertyUtil;
 import com.code.generator.vo.FieldInfo;
 import com.code.generator.vo.GeneratorConfig;

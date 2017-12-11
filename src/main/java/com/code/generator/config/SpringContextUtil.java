@@ -1,4 +1,4 @@
-package com.code.generator.util;
+package com.code.generator.config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,15 +10,12 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by WuTing on 2017/12/5.
  */
 @Component
-@Order(Integer.MIN_VALUE)
 public class SpringContextUtil implements ApplicationContextAware {
 
 	private static ApplicationContext applicationContext;
@@ -72,9 +69,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 			Class type = applicationContext.getType(name);
 			if (excludeTypes != null) {
 				boolean flag = Arrays.stream(excludeTypes)
-					.filter(excludeType -> excludeType.equals(type))
-					.findAny()
-					.isPresent();
+					.anyMatch(excludeType -> excludeType.equals(type) || name.equals("dataSource"));
 
 				if (flag) {
 					continue;

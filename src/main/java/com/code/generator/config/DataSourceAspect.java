@@ -66,7 +66,9 @@ public class DataSourceAspect {
 		if (StringUtils.isEmpty(dataSourceName) && point.getTarget().getClass().isAnnotationPresent(DataSource.class)) {
 			dataSourceName = point.getTarget().getClass().getAnnotation(DataSource.class).value();
 		}
-
+		if (StringUtils.isNotEmpty(dataSourceName) &&!dataSourceName.toLowerCase().contains("datasource")){
+			dataSourceName+="DataSource";
+		}
 		return dataSourceName;
 	}
 }
