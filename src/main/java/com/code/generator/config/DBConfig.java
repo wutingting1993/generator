@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
  */
 @Configuration
 @PropertySource("classpath:db.properties")
-@Import(DataSourceRegister.class)
+@Import({DataSourceRegister.class})
 public class DBConfig {
 	//	@Bean("schemaDataSource")
 	//	@ConfigurationProperties(prefix = "spring.datasource.schema")

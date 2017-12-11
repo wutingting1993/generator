@@ -1,4 +1,4 @@
-package com.code.generator.config;
+package com.code.generator.aspect;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
@@ -13,6 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
+import com.code.generator.annotation.DataSource;
+import com.code.generator.annotation.Schema;
+import com.code.generator.config.DataSourceContextHolder;
 
 /**
  * Created by WuTing on 2017/12/5.

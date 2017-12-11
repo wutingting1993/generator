@@ -14,7 +14,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
 	public DynamicDataSource(String defaultDataSourceName) {
-		Map<Object, Object> dataSourcs = SpringContextUtil.getBeans(DataSource.class, DynamicDataSource.class);
+		Map<Object, Object> dataSourcs = SpringContext.getBeans(DataSource.class, DynamicDataSource.class);
 		List dataSourceIds = dataSourcs.keySet().stream().collect(Collectors.toList());
 		DataSourceContextHolder.dataSourceIds.addAll(dataSourceIds);
 		this.setTargetDataSources(dataSourcs);

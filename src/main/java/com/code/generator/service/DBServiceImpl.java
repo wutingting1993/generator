@@ -16,9 +16,9 @@ import org.springframework.jdbc.support.rowset.SqlRowSetMetaData;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import com.code.generator.config.DataSource;
-import com.code.generator.config.Schema;
-import com.code.generator.config.SpringContextUtil;
+import com.code.generator.annotation.DataSource;
+import com.code.generator.annotation.Schema;
+import com.code.generator.config.SpringContext;
 import com.code.generator.util.PropertyUtil;
 import com.code.generator.util.StringUtil;
 import com.code.generator.vo.GeneratorConfig;
@@ -130,6 +130,6 @@ public class DBServiceImpl implements DBService {
 	}
 
 	private DBService getService() {
-		return SpringContextUtil.getBean(DBService.class);
+		return SpringContext.getBean(DBService.class);
 	}
 }

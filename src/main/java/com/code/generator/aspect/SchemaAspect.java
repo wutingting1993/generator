@@ -1,4 +1,4 @@
-package com.code.generator.config;
+package com.code.generator.aspect;
 
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
@@ -15,6 +15,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import com.code.generator.annotation.Schema;
+import com.code.generator.config.DataSourceContextHolder;
+
 /**
  * Created by WuTing on 2017/12/5.
  */
@@ -24,7 +27,7 @@ import org.springframework.stereotype.Component;
 public class SchemaAspect {
 	private static final Logger logger = LoggerFactory.getLogger(SchemaAspect.class);
 
-	@Before(value = "@annotation(com.code.generator.config.Schema)")
+	@Before(value = "@annotation(com.code.generator.annotation.Schema)")
 	public void before(JoinPoint point) {
 		String dataSourceName = getDataSourceName(point);
 		if (StringUtils.isNotEmpty(dataSourceName)) {
@@ -33,7 +36,7 @@ public class SchemaAspect {
 		}
 	}
 
-	@After(value = "@annotation(com.code.generator.config.Schema)")
+	@After(value = "@annotation(com.code.generator.annotation.Schema)")
 	public void restoreDataSource(JoinPoint point) {
 
 		String dataSourceName = getDataSourceName(point);

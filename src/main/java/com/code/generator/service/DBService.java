@@ -3,7 +3,7 @@ package com.code.generator.service;
 import java.util.List;
 import java.util.Map;
 
-import com.code.generator.config.Schema;
+import com.code.generator.annotation.Schema;
 import com.code.generator.vo.TableInfo;
 
 /**

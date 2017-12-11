@@ -1,4 +1,4 @@
-package com.code.generator.config;
+package com.code.generator.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -8,12 +8,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by WuTing on 2017/12/5.
+ * Created by WuTing on 2017/12/7.
  */
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.PARAMETER, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
-public @interface DataSource {
+public @interface Schema {
 	String value() default "";
 }
