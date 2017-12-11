@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 /**
  * Created by WuTing on 2017/12/7.
  */
-@Target({ElementType.PARAMETER})
+@Target({ElementType.PARAMETER, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
